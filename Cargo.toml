@@ -1,0 +1,6 @@
+[package]
+name = "libav-rs"
+version = "0.1.0"
+authors = ["Luca Barbato <lu_zero@gentoo.org>"]
+
+[dependencies]
