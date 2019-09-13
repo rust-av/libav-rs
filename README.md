@@ -1,6 +1,7 @@
 # libav bindings
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Actions Status](https://github.com/rust-av/libav-rs/workflows/libav/badge.svg)](https://github.com/rust-av/libav-rs/actions)
 
 It is a simple [binding][1] and safe abstraction over [libav][2] avcodec and avformat.
 
