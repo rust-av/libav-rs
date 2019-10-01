@@ -1,3 +1,4 @@
 src/avformat.rs
 src/avcodec.rs
+src/avresample.rs
 target/
