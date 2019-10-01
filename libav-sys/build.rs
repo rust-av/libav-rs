@@ -20,6 +20,7 @@ fn format_write(builder: bindgen::Builder, output: &str) {
 
 fn common_builder() -> bindgen::Builder {
     bindgen::builder()
+        .raw_line("#![allow(deprecated)]")
         .raw_line("#![allow(dead_code)]")
         .raw_line("#![allow(non_camel_case_types)]")
         .raw_line("#![allow(non_snake_case)]")
