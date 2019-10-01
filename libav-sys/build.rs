@@ -12,8 +12,7 @@ fn format_write(builder: bindgen::Builder, output: &str) {
         .replace("/**", "/*")
         .replace("/*!", "/*");
 
-    let mut file = File::create(output)
-        .unwrap();
+    let mut file = File::create(output).unwrap();
 
     let _ = file.write(s.as_bytes());
 }
@@ -31,7 +30,11 @@ fn main() {
     let libs = metadeps::probe().unwrap();
 
     for e in ["avcodec", "avformat"].iter() {
-        let headers = libs.get(&format!("lib{}", e)).unwrap().include_paths.clone();
+        let headers = libs
+            .get(&format!("lib{}", e))
+            .unwrap()
+            .include_paths
+            .clone();
 
         let mut builder = common_builder().header(format!("data/lib{}.h", e));
 
