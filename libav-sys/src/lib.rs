@@ -3,7 +3,9 @@
 
 pub mod avcodec;
 pub mod avformat;
+pub mod avfilter;
 pub mod avresample;
+pub mod swresample;
 
 #[cfg(test)]
 mod tests {
