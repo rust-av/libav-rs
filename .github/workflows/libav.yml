@@ -12,12 +12,22 @@ jobs:
     - name: Install nasm
       run: |
         sudo apt-get install nasm
-    - name: Install libav
+    - name: Cache libav
+      uses: actions/cache@preview
+      id: cache
+      with:
+        path: libav
+        key: ${{ runner.os }}-${{ hashFiles('**/libav-sys/Cargo.toml')}}
+    - name: Build libav
+      if: steps.cache.outputs.cache-hit != 'true'
       run: |
         git clone --depth 1 https://github.com/libav/libav
         cd libav
         ./configure --prefix=$HOME/libav_dir
         make
+    - name: Install libav
+      run: |
+        cd libav
         make install
     - name: Run tests
       run: |
