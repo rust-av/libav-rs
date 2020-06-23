@@ -1,5 +1,5 @@
 extern crate bindgen;
-extern crate metadeps;
+extern crate system_deps;
 
 use std::fs::File;
 use std::io::Write;
@@ -27,7 +27,7 @@ fn common_builder() -> bindgen::Builder {
 }
 
 fn main() {
-    let libs = metadeps::probe().unwrap();
+    let libs = system_deps::Config::new().probe().unwrap();
 
     for e in [
         "avcodec",
