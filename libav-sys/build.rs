@@ -29,7 +29,15 @@ fn common_builder() -> bindgen::Builder {
 fn main() {
     let libs = metadeps::probe().unwrap();
 
-    for e in ["avcodec", "avfilter", "avformat", "avresample", "swresample"].iter() {
+    for e in [
+        "avcodec",
+        "avfilter",
+        "avformat",
+        "avresample",
+        "swresample",
+    ]
+    .iter()
+    {
         let headers = libs
             .get(&format!("lib{}", e))
             .unwrap()
